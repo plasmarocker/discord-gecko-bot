@@ -22,7 +22,7 @@ client.on('message', async msg => {
     switch (msg.content) {
         case '!gecko face':
             const face = await getGeckoFace();
-            msg.channel.send(face);
+            msg.channel.send(`${face} \n powered by GIPHY`);
             break;
         case '!gecko fact':
             msg.reply(`I can't give you facts yet, but I will be able to soon!`);
