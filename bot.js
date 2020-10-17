@@ -16,12 +16,23 @@ const getGeckoFace = async () => {
         return err;
     }
 
-}
+};
 
-const getGeckoFact = async() => {
+const getGeckoFact = async () => {
     try {
         var response = await axios.get(`http://api.fungenerators.com/fact/random?category=Animal&subcategory=gecko`, { headers: { "X-Fungenerators-Api-Secret": funGeneratorsKey } });
         return response.data.contents.fact;
+    } catch (err) {
+        console.error(err);
+        return err;
+    }
+
+};
+
+const getLizardDance = async () => {
+    try {
+        var response = await axios.get(`https://api.giphy.com/v1/gifs/random?api_key=${giphyKey}&tag=lizard+dance`);
+        return response.data.data.images.original.url;
     } catch (err) {
         console.error(err);
         return err;
@@ -42,6 +53,10 @@ client.on('message', async msg => {
         case '!gecko fact':
             const fact = await getGeckoFact();
             msg.reply(fact);
+            break;
+        case '!geckspacho':
+            const dance = await getLizardDance();
+            msg.reply(dance);
             break;
     }
 });
