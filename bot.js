@@ -9,7 +9,7 @@ const discordToken = process.env.DISCORD_TOKEN;
 
 const getGeckoFace = async () => {
     try {
-        var response = await axios.get(`https://api.giphy.com/v1/gifs/random?api_key=${giphyKey}&tag=gecko&rating=g`);
+        var response = await axios.get(`https://api.giphy.com/v1/gifs/random?api_key=${giphyKey}&tag=lizard+gecko&rating=g`);
         return response.data.data.images.original.url;
     } catch (err) {
         console.error(err);
