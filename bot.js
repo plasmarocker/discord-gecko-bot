@@ -54,10 +54,10 @@ client.on('message', async msg => {
             const fact = await getGeckoFact();
             msg.reply(fact);
             break;
-        case '!geckspacho':
-            const dance = await getLizardDance();
-            msg.reply(dance);
-            break;
+        // case '!geckspacho':
+        //     const dance = await getLizardDance();
+        //     msg.reply(dance);
+        //     break;
     }
 });
 
